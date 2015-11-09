@@ -9,7 +9,7 @@ module Salesforce
                       FirstName: opts[:name],
                       MiddleName: opts[:middleName],
                       LastName: opts[:lastName],
-                      Status: 'New',
+                      Status: opts[:status],
                       Company: opts[:company],
                       Email: opts[:email],
                       Website: opts[:website],
