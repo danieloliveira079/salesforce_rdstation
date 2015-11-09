@@ -55,9 +55,25 @@ RSpec.describe Salesforce, "setup api keys" do
       }
 
       obj = Salesforce::Lead.new(client_keys)
-      obj.create(opts)
+      newLead = obj.create(opts)
 
-      expect(obj.client_keys).to eq client_keys
+      expect(newLead).not_to eq nil
+    end
+
+    it "should return Leads from Salesforce" do
+      client_keys = {
+          "api_version" => "32.0",
+          "oauth_token" => "00D61000000eBTd!AREAQP626jDXLEGK08IgZ3_k2u24PiDydggcs.rFDYqf5xeLBkPhU0Dkz_MYMEt8joxnZzA0LyId0XNJr_h.5L99i4y2wjdJ",
+          "refresh_token" => nil,
+          "instance_url" => "https://na34.salesforce.com",
+          "client_id" => "3MVG9KI2HHAq33RxE3uJ6fN7r8Ni2mAGzpVhlQeKePV7GxYdNGe65yXkxVk.ySXzgy8KZ52i0QRhlTOpBCkXb",
+          "client_secret" => "915198885628210263"
+        }
+
+      obj = Salesforce::Lead.new(client_keys)
+      leads = obj.getAllLeads
+
+      expect(leads).not_to eq nil
     end
   end
 
