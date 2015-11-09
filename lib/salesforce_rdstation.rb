@@ -1,5 +1,6 @@
 require 'salesforce/base'
+require 'salesforce/lead'
 
 module Salesforce
-  Base.hola
+  
 end
