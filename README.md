@@ -78,6 +78,10 @@ client_keys = {
   leads = @client.getAllLeads
 ```
 
+### Test
 
+Run gem tests using [RSpec](http://rspec.info/)
 
-
+```ruby
+$ rspec --format doc
+```
