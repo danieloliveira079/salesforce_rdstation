@@ -6,6 +6,10 @@ Features include:
 * List all Leads from Salesforce website
 * Create new Leads on Salesforce by importing from RD Station 
 
+###References
+
+This gem was built using [Restforce](https://github.com/ejholmes/restforce) for Salesforce API communication.
+
 ###Install
 
 You can install the latest code for the salesforce_rdstation gem in a project by including this line in your Gemfile
@@ -27,6 +31,10 @@ Salesforce RD Station is pretty simple and easy to be used. All you have to do w
 ### How to instantiate the Salesforce client
 
 ```ruby
+   require 'salesforce_rdstation' 
+   
+   ...
+   
    client = Salesforce::Lead.new(client_keys)
 ```
 
@@ -75,7 +83,7 @@ client_keys = {
  
  client = Salesforce::Lead.new(client_keys)
           
-  leads = @client.getAllLeads
+ leads = @client.getAllLeads
 ```
 
 ### Test
@@ -85,3 +93,5 @@ Run gem tests using [RSpec](http://rspec.info/)
 ```ruby
 $ rspec --format doc
 ```
+
+
